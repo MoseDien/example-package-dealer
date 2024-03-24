@@ -21,7 +21,8 @@ let package = Package(
     products: [
         .executable(name: "dealer", targets: ["dealer"]),
         .executable(name: "sample", targets: ["sample"]),
-        .executable(name: "xprint", targets: ["print"])
+        .executable(name: "print", targets: ["print"]),
+        .executable(name: "myprint", targets: ["myprint"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -51,6 +52,10 @@ let package = Package(
             ]),
         .executableTarget(
             name: "print"
+            ),
+        .executableTarget(
+            name: "myprint",
+            path: "Sources/xprint"
             ),
         .testTarget(
             name: "DealerTests",

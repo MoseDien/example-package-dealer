@@ -8,8 +8,8 @@
 import Foundation
 
 @main
-class MyApp {
+class XPrint {
   static func main() {
-    print("helo, Print MyApp!")
+    print("helo, XPrint!")
   }
 }
