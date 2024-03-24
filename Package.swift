@@ -20,6 +20,8 @@ let package = Package(
     ],
     products: [
         .executable(name: "dealer", targets: ["dealer"]),
+        .executable(name: "sample", targets: ["sample"]),
+        .executable(name: "xprint", targets: ["print"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -39,6 +41,17 @@ let package = Package(
                 .product(name: "ArgumentParser",
                          package: "swift-argument-parser")
             ]),
+        .executableTarget(
+            name: "sample",
+            dependencies: [
+                .product(name: "DeckOfPlayingCards",
+                         package: "example-package-deckofplayingcards"),
+                .product(name: "ArgumentParser",
+                         package: "swift-argument-parser")
+            ]),
+        .executableTarget(
+            name: "print"
+            ),
         .testTarget(
             name: "DealerTests",
             dependencies: [

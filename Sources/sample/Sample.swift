@@ -1,12 +1,9 @@
-/*
- This source file is part of the Swift.org open source project
-
- Copyright 2015 – 2021 Apple Inc. and the Swift project authors
- Licensed under Apache License v2.0 with Runtime Library Exception
-
- See http://swift.org/LICENSE.txt for license information
- See http://swift.org/CONTRIBUTORS.txt for Swift project authors
-*/
+//
+//  File.swift
+//  
+//
+//  Created by Bell Dien on 2024/3/24.
+//
 
 #if os(Linux)
 import Glibc
@@ -18,7 +15,7 @@ import PlayingCard
 import ArgumentParser
 
 @main
-struct Deal: ParsableCommand {
+struct Sample: ParsableCommand {
     enum Error: Swift.Error, CustomStringConvertible {
         case notEnoughCards
 
@@ -40,7 +37,7 @@ struct Deal: ParsableCommand {
 
     @Argument(help: .init("The number of cards to deal at a time.",
                           valueName: "count"))
-    var counts: [UInt] = [3]
+    var counts: [UInt] = [2]
 
     mutating func run() throws {
         #if os(Linux)
@@ -65,3 +62,4 @@ struct Deal: ParsableCommand {
         }
     }
 }
+
